@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "amd",
+    "moduleResolution": "node",
+    "alwaysStrict": true,
+    "allowJs": false,
+    "declaration": true,
+    "outDir": "",
+    "out": "types/types.d.js",
+    "sourceMap": true,
+    "lib": ["es6"],
+    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "suppressExcessPropertyErrors": true,
+    "esModuleInterop": true,
+    "typeRoots": ["types", "node_modules/@types"],
+    "removeComments": true,
+    "rootDir": "src"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
