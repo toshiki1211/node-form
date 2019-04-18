@@ -8,8 +8,11 @@
     "build:js": "babel src -d dist --extensions \".js,.ts,.tsx\" --source-maps inline --copy-files"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-session": "^1.16.1",
     "log4js": "^4.1.0"
   },
   "devDependencies": {

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ログイン</title>
+    <title>新規登録</title>
 </head>
 <body>
-    <form action="/login-confirm" method="POST">
-        <input type="text" name="id">
-        <input type="text" name="password">
+    <form action="/register-confirm" method="POST">
+        <input type="text" name="id" id="" value="<%= id %>">
+        <input type="text" name="password" value="<%= password %>">
         <input type="submit" value="送信">
     </form>
 </body>

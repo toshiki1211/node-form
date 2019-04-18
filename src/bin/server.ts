@@ -1,10 +1,11 @@
 import config from 'config';
 import { debugLogger } from '../common/util/logger';
-const app = require('../app');
+import { App } from '../app';
 
 (function() {
     try {
-        app.listen(config.server.port);
+        const server = App.bootstrap().app;
+        server.listen(config.server.port);
     } catch (error) {
         debugLogger.debug(`${error}：サーバー接続エラー`);
     }

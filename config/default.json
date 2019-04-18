@@ -1,5 +1,9 @@
 {
     "server": {
-        "port": 8000
+        "port": 8000,
+        "cookie": {
+            "secret": "dX5HjKtN",
+            "name": "sessionId"
+        }
     }
 }

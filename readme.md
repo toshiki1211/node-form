@@ -1,5 +1,5 @@
 # ローカル環境
 ```
 yarn run build
-./dist/bin/server.js
+node ./dist/bin/server.js
 ```

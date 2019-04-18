@@ -1,12 +1,53 @@
 import express from 'express';
+import config from 'config';
+import bodyParser from 'body-parser';
+import session from 'express-session';
+
 const router = require('./routes/router');
-const app = express();
 
-// テンプレートエンジンの指定
-app.set('views', __dirname + '/views');
-app.set("view engine", "ejs");
+/**
+ * @class App
+ **/
+export class App {
+    public app: express.Application;
 
-// ルーティングモジュールをアプリケーションのパスにマウントさせる
-app.use('/', router);
+    /**
+     * @consturot
+     */
+    constructor () {
+        this.app = express();
+        this.config();
+    }
 
-module.exports = app;
+    /**
+     * @method bootstrap
+     * @return { instance }
+     */
+    public static bootstrap(): express {
+        return new App();
+    }
+
+    /**
+     * @method config
+     */
+    public config(): void {
+        // テンプレートの設定
+        this.app.set('views', __dirname + '/views');
+        this.app.set("view engine", "ejs");
+
+        // セッションの設定
+        this.app.use(session({
+            secret: config.server.cookie.secret,
+            name: config.server.cookie.name
+        }));
+
+        this.app.use(bodyParser.urlencoded({extended:false}));
+        this.app.use(bodyParser.json());
+
+        // ルーティングモジュールをアプリケーションのパスにマウントさせる
+        this.app.use('/', router);
+        this.app.use('/login', router);
+        this.app.use('/register-confirm', router);
+        this.app.use('/register', router);
+    }
+}
