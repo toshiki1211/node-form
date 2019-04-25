@@ -7,7 +7,7 @@
     "allowJs": false,
     "declaration": true,
     "outDir": "",
-    "out": "types/types.d.js",
+    "out": "type/types.d.js",
     "sourceMap": true,
     "lib": ["es6"],
     "resolveJsonModule": true,
